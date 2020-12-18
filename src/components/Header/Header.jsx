@@ -21,6 +21,12 @@ function Header({ loggedIn, logout }) {
           <Link to="/about" className="navbar-item">
             About
           </Link>
+          <Link to="/add-beer" className="navbar-item">
+            AddBeer
+          </Link>
+          <Link to="/add-bottle" className="navbar-item">
+            AddBottle
+          </Link>
         </div>
 
         <div className="navbar-end">

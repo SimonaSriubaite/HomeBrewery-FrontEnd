@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 
 import { Header } from "./components";
-import { Home, Login, Register, About } from "./pages";
+import { Home, Login, Register, About, AddBeer, AddBottle } from "./pages";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 function Routes() {
@@ -23,6 +23,8 @@ function Routes() {
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/about" component={About} />
+        <PrivateRoute exact path="/add-beer" component={AddBeer} />
+        <PrivateRoute exact path="/add-bottle" component={AddBottle} />
       </Switch>
     </Router>
   );

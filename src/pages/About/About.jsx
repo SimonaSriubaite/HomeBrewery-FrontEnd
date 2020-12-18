@@ -1,14 +1,31 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Loading } from "../../components";
+import { Loading, Button } from "../../components";
 import * as S from "./About.style";
 import { AuthContext } from "../../context/AuthContext";
+
+function deleteButton(e, data, setData) {
+  const pass = prompt("Please enter the password");
+  const beerId = Number(e.target.value);
+  if (pass != null) {
+    fetch(`http://localhost:8080/delete/${beerId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify({ pass }),
+    }).then((item) => {
+      console.log(data);
+      setData(data.filter((item) => beerId !== item.id));
+    });
+  }
+}
 
 function About() {
   const [data, setData] = useState([]);
   const authContext = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:8080/beers", {
+    fetch("http://localhost:8080/viewbeerquantity", {
       headers: {
         Authorization: `Bearer ${authContext.token}`,
       },
@@ -38,6 +55,16 @@ function About() {
                   <td>{beer.style}</td>
                   <td>{beer.alcohol}</td>
                   <td>{beer.IBU}</td>
+                  <td>
+                    <Button
+                      value={beer.id}
+                      handleClick={(e) => {
+                        deleteButton(e, data, setData);
+                      }}
+                    >
+                      Delete
+                    </Button>
+                  </td>
                 </tr>
               ))}
             </tbody>
