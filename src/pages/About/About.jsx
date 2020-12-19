@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Loading, Button } from "../../components";
-import * as S from "./About.style";
+import { Loading } from "../../components";
 import { AuthContext } from "../../context/AuthContext";
 
 function deleteButton(e, data, setData) {
@@ -36,43 +35,41 @@ function About() {
 
   return (
     <div>
-      <S.TableBox>
-        <S.TableTitle>Beers</S.TableTitle>
-        {data ? (
-          <S.Table>
-            <thead>
-              <tr>
-                <th>Beer Name</th>
-                <th>Beer Type</th>
-                <th>Alcohol</th>
-                <th>IBU</th>
+      {data ? (
+        <table>
+          <thead>
+            <tr>
+              <th>Beer Name</th>
+              <th>Beer Type</th>
+              <th>Alcohol</th>
+              <th>IBU</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((beer) => (
+              <tr key={beer.id}>
+                <td>{beer.title}</td>
+                <td>{beer.style}</td>
+                <td>{beer.alcohol}</td>
+                <td>{beer.IBU}</td>
+                <td>{beer.Total}</td>
+                <td>
+                  <button
+                    value={beer.id}
+                    onClick={(e) => {
+                      deleteButton(e, data, setData);
+                    }}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
-            </thead>
-            <tbody>
-              {data.map((beer) => (
-                <tr key={beer.id}>
-                  <td>{beer.title}</td>
-                  <td>{beer.style}</td>
-                  <td>{beer.alcohol}</td>
-                  <td>{beer.IBU}</td>
-                  <td>
-                    <Button
-                      value={beer.id}
-                      handleClick={(e) => {
-                        deleteButton(e, data, setData);
-                      }}
-                    >
-                      Delete
-                    </Button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </S.Table>
-        ) : (
-          <Loading />
-        )}
-      </S.TableBox>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 }

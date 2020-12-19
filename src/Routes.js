@@ -20,11 +20,11 @@ function Routes() {
       />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/register" component={Register} />
-        <PrivateRoute exact path="/about" component={About} />
-        <PrivateRoute exact path="/add-beer" component={AddBeer} />
-        <PrivateRoute exact path="/add-bottle" component={AddBottle} />
+        <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
+        <PrivateRoute path="/about" component={About} />
+        <PrivateRoute path="/add-beer" component={AddBeer} />
+        <PrivateRoute path="/add-bottle" component={AddBottle} />
       </Switch>
     </Router>
   );

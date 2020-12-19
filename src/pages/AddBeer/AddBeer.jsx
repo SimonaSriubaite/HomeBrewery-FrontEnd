@@ -1,10 +1,7 @@
 import React, { useState, useContext } from "react";
 import { FormTemplate } from "../../components";
 import { AddBeerForm } from "../../utils/formData";
-import * as S from "./AddBeer.style";
 import { AuthContext } from "../../context/AuthContext";
-
-//import * as S from "./AddBeer.style";
 
 function addBeer(fieldValues, authContext) {
   fetch("http://localhost:8080/beers", {
@@ -52,7 +49,6 @@ function AddBeer() {
       <FormTemplate
         callback={(fieldValues) => addBeer(fieldValues, authContext)}
         fields={AddBeerForm}
-        buttonName="ADD"
         options={beerStyles}
       />
     </>

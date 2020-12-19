@@ -1,0 +1,11 @@
+@import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
+
+.home {
+  &__figure {
+    margin: 0;
+    &-img {
+      width: 100%;
+    }
+  }
+}

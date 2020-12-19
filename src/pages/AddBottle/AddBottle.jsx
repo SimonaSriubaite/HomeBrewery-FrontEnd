@@ -42,7 +42,6 @@ function AddBottle() {
       <FormTemplate
         callback={(fieldValues) => addBottle(fieldValues, authContext)}
         fields={ChangeQuantityForm}
-        buttonName="ADD"
         options={data}
       />
     </>

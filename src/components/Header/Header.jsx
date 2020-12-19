@@ -1,53 +1,50 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import * as S from "./Header.style";
+import { NavLink } from "react-router-dom";
 import logoImg from "../../assets/logo.png";
+import "./Header.scss";
 
 function Header({ loggedIn, logout }) {
   return (
-    <nav className="navbar" role="navigation" aria-label="main navigation">
-      <div className="navbar-brand">
-        <Link to="/">
-          <S.Logo src={logoImg} alt="Logo" />
-        </Link>
-      </div>
-
-      <div id="navbarBasicExample" className="navbar-menu">
-        <div className="navbar-start">
-          <Link to="/" className="navbar-item">
+    <nav className="header" role="navigation" aria-label="main navigation">
+      <div className="header__menu">
+        <div className="header__menu-start">
+          <figure className="header__logo">
+            <NavLink to="/">
+              <img className="header__logo-img" src={logoImg} alt="Logo" />
+            </NavLink>
+          </figure>
+          <NavLink to="/" exact={true} className="header__menu-item">
             Home
-          </Link>
+          </NavLink>
 
-          <Link to="/about" className="navbar-item">
+          <NavLink to="/about" className="header__menu-item">
             About
-          </Link>
-          <Link to="/add-beer" className="navbar-item">
-            AddBeer
-          </Link>
-          <Link to="/add-bottle" className="navbar-item">
-            AddBottle
-          </Link>
+          </NavLink>
+          <NavLink to="/add-beer" className="header__menu-item">
+            Add Beer
+          </NavLink>
+          <NavLink to="/add-bottle" className="header__menu-item">
+            Add Bottle
+          </NavLink>
         </div>
 
-        <div className="navbar-end">
-          <div className="navbar-item">
-            <div className="buttons">
-              {!loggedIn && (
-                <>
-                  <Link to="/register" className="button is-primary">
-                    <strong>Register</strong>
-                  </Link>
-                  <Link to="/login" className="button is-light">
-                    Log in
-                  </Link>
-                </>
-              )}
-              {loggedIn && (
-                <button className="button is-light" onClick={logout}>
-                  Logout
-                </button>
-              )}
-            </div>
+        <div className="header__menu-end">
+          <div className="buttons">
+            {!loggedIn && (
+              <>
+                <NavLink to="/register" className="header__menu-item">
+                  Register
+                </NavLink>
+                <NavLink to="/login" className="header__menu-item">
+                  Log in
+                </NavLink>
+              </>
+            )}
+            {loggedIn && (
+              <button className="header__menu-item" onClick={logout}>
+                Logout
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, InputField, Section } from "../../components";
+import { InputField, Section } from "../../components";
 
 function register(data) {
   fetch("http://localhost:8080/register", {
@@ -56,7 +56,7 @@ function Register() {
           }
         />
 
-        <Button color="is-primary">Register</Button>
+        <button>Register</button>
       </form>
     </Section>
   );

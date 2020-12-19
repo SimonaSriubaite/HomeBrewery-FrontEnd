@@ -1,0 +1,53 @@
+@import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+.header {
+  display: flex;
+
+  @include respond-to($mobile, max) {
+    display: none;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    width: 1400px;
+    align-items: center;
+    margin: 0 auto;
+
+    &-start {
+      display: flex;
+      align-items: center;
+    }
+
+    &-item {
+      text-decoration: none;
+      margin: 0 20px;
+      //text-transform: uppercase;
+      color: $color-black;
+      font-weight: 500;
+      display: inline-block;
+
+      &:hover {
+        font-weight: 700;
+        transform: scale(1.08);
+      }
+    }
+    .active {
+      font-weight: 700;
+      transform: scale(1.08);
+    }
+  }
+
+  &__logo {
+    width: 80px;
+    margin: 0;
+
+    &-img {
+      width: 100%;
+      display: block;
+    }
+  }
+}

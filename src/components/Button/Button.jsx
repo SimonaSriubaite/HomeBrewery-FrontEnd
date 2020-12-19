@@ -1,11 +1,10 @@
 import React from "react";
-import * as S from "./Button.style";
 
-function Button({ children, handleClick, color, value }) {
+function Button({ children, handleClick, value }) {
   return (
-    <S.Button onClick={handleClick} value={value} color={color}>
+    <Button onClick={handleClick} value={value}>
       {children}
-    </S.Button>
+    </Button>
   );
 }
 

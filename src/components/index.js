@@ -7,3 +7,4 @@ export { default as PrivateRoute } from "./PrivateRoute/PrivateRoute";
 export { default as Loading } from "./Loading/Loading";
 export { default as InputForm } from "./InputForm/InputForm";
 export { default as FormTemplate } from "./FormTemplate/FormTemplate";
+export { default as Test } from "./Test/Test";

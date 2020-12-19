@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Button, Notification, InputField, Section } from "../../components";
+import { Notification, InputField, Section, Test } from "../../components";
 
 function login(data, context, setError, history) {
   fetch("http://localhost:8080/login", {
@@ -74,7 +74,8 @@ function Home() {
           }
         />
 
-        <Button color="is-primary">Login</Button>
+        <button>Login</button>
+        <Test />
       </form>
     </Section>
   );
