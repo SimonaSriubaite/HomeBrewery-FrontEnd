@@ -4,7 +4,7 @@ import { AddBeerForm } from "../../utils/formData";
 import { AuthContext } from "../../context/AuthContext";
 
 function addBeer(fieldValues, authContext) {
-  fetch("http://localhost:8080/beers", {
+  fetch("http://jy8e.c.dedikuoti.lt:8081/beers", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

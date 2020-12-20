@@ -4,7 +4,7 @@ import { ChangeQuantityForm } from "../../utils/formData";
 import { AuthContext } from "../../context/AuthContext";
 
 function addBottle(fieldValues, authContext) {
-  fetch("http://localhost:8080/changebeerquantity", {
+  fetch("http://jy8e.c.dedikuoti.lt:8081/changebeerquantity", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -22,7 +22,7 @@ function AddBottle() {
   const [data, setData] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:8080/beers", {
+    fetch("http://jy8e.c.dedikuoti.lt:8081/beers", {
       headers: {
         Authorization: `Bearer ${authContext.token}`,
       },

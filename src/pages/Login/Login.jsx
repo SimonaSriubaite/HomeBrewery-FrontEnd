@@ -5,7 +5,7 @@ import { Notification, InputForm } from "../../components";
 import "./Login.scss";
 
 function login(data, context, setError, history) {
-  fetch("http://localhost:8080/login", {
+  fetch("http://jy8e.c.dedikuoti.lt:8081/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

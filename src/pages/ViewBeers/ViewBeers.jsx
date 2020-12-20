@@ -7,7 +7,7 @@ function deleteButton(e, data, setData) {
   const pass = prompt("Please enter the password");
   const beerId = Number(e.target.value);
   if (pass != null) {
-    fetch(`http://localhost:8080/delete/${beerId}`, {
+    fetch(`http://jy8e.c.dedikuoti.lt:8081/delete/${beerId}`, {
       method: "DELETE",
       headers: {
         "Content-type": "application/json; charset=UTF-8",

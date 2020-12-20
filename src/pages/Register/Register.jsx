@@ -3,7 +3,7 @@ import { InputForm } from "../../components";
 import "./Register.scss";
 
 function register(data) {
-  fetch("http://localhost:8080/register", {
+  fetch("http://jy8e.c.dedikuoti.lt:8081/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -9,7 +9,7 @@ const SliderCard = (props) => {
   const authContext = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:8080/beers", {
+    fetch("http://jy8e.c.dedikuoti.lt:8081/beers", {
       headers: {
         Authorization: `Bearer ${authContext.token}`,
       },
