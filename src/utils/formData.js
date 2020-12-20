@@ -1,3 +1,23 @@
+export const registration = [
+  {
+    name: "username",
+    type: "username",
+    labelText: "Username",
+    required: true,
+    minLength: 6,
+    maxLength: 20,
+    placeholder: "johnsmith",
+  },
+  {
+    name: "password",
+    type: "password",
+    labelText: "Password",
+    required: true,
+    minLength: 8,
+    maxLength: 64,
+    placeholder: "*********",
+  },
+];
 export const AddBeerForm = [
   {
     name: "title",
@@ -13,9 +33,6 @@ export const AddBeerForm = [
     type: "dropdown",
     labelText: "Style",
     required: true,
-    //minLength: 3,
-    //maxLength: 64,
-    //placeholder: "Lager",
   },
   {
     name: "alcohol",
@@ -37,12 +54,6 @@ export const AddBeerForm = [
   },
 ];
 export const ChangeQuantityForm = [
-  /*{
-    name: "beerId",
-    type: "dropdown",
-    labelText: "Beer Title",
-    required: true,
-  },*/
   {
     name: "beerId",
     type: "dropdown",

@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Notification, InputField, Section, Test } from "../../components";
+import { Notification, InputForm } from "../../components";
+import "./Login.scss";
 
 function login(data, context, setError, history) {
   fetch("http://localhost:8080/login", {
@@ -35,19 +36,20 @@ function Home() {
   const [error, setError] = useState("");
 
   return (
-    <Section>
+    <div className="login">
       {error && <Notification>{error}</Notification>}
       <form
+        className="login__form"
         onSubmit={(e) => {
           e.preventDefault();
 
           login(userDetails, authTokenContext, setError, history);
         }}
       >
-        <InputField
+        <InputForm
           type="text"
-          labelText="Username"
-          placeholderText="petras123"
+          label="Username"
+          placeholder="petras123"
           minLength="6"
           maxLength="20"
           required
@@ -59,10 +61,10 @@ function Home() {
           }
         />
 
-        <InputField
+        <InputForm
           type="password"
-          labelText="Password"
-          placeholderText="password123"
+          label="Password"
+          placeholder="password123"
           minLength="8"
           maxLength="64"
           required
@@ -74,10 +76,9 @@ function Home() {
           }
         />
 
-        <button>Login</button>
-        <Test />
+        <button className="login__button">Login</button>
       </form>
-    </Section>
+    </div>
   );
 }
 

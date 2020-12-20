@@ -1,0 +1,40 @@
+@import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+.login {
+  max-width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  background-color: $color-gray-2;
+
+  &__form {
+    max-width: 400px;
+    padding: 50px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: $box-shadow-big;
+  }
+
+  &__button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    float: right;
+    background-color: $color-gray-4;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    box-shadow: $box-shadow-small;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover,
+    &:active {
+      background-color: $color-gray-3;
+    }
+  }
+}

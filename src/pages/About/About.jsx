@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Loading } from "../../components";
+import { Loader } from "../../components";
 import { AuthContext } from "../../context/AuthContext";
 
 function deleteButton(e, data, setData) {
@@ -68,7 +68,7 @@ function About() {
           </tbody>
         </table>
       ) : (
-        <Loading />
+        <Loader />
       )}
     </div>
   );

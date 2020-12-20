@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { InputField, Section } from "../../components";
+import { InputForm } from "../../components";
+import "./Register.scss";
 
 function register(data) {
   fetch("http://localhost:8080/register", {
@@ -18,18 +19,19 @@ function Register() {
   });
 
   return (
-    <Section>
+    <div className="register">
       <form
+        className="register__form"
         onSubmit={(e) => {
           e.preventDefault();
 
           register(userDetails);
         }}
       >
-        <InputField
+        <InputForm
           type="text"
-          labelText="Username"
-          placeholderText="username"
+          label="Username"
+          placeholder="username"
           minLength="6"
           maxLength="20"
           required
@@ -41,10 +43,10 @@ function Register() {
           }
         />
 
-        <InputField
+        <InputForm
           type="password"
-          labelText="Password"
-          placeholderText="password"
+          label="Password"
+          placeholder="password"
           minLength="8"
           maxLength="64"
           required
@@ -56,9 +58,9 @@ function Register() {
           }
         />
 
-        <button>Register</button>
+        <button className="register__button">Register</button>
       </form>
-    </Section>
+    </div>
   );
 }
 
