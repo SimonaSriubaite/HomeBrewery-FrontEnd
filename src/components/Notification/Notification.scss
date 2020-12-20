@@ -1,0 +1,39 @@
+@import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+.notification {
+  background-color: $color-error;
+  width: 500px;
+  height: 40px;
+  margin: 0 auto;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+
+  &__button {
+    position: absolute;
+    right: 10px;
+    border: none;
+    background-color: $color-transparent;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid white;
+      width: 25px;
+      height: 25px;
+      border-radius: 8px;
+      opacity: 0.7;
+    }
+
+    &-icon {
+      display: block;
+    }
+  }
+
+  &-closed {
+    display: none;
+  }
+}

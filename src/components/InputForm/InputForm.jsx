@@ -1,4 +1,5 @@
 import React from "react";
+import "./InputForm.scss";
 
 function InputField({
   label,
@@ -15,8 +16,10 @@ function InputField({
   switch (type) {
     case "email":
       return (
-        <>
-          <label htmlFor={inputId}>{label}</label>
+        <div className="inputfield">
+          <label className="inputfield__label" htmlFor={inputId}>
+            {label}
+          </label>
           <input
             onChange={handleChange}
             id={inputId}
@@ -27,13 +30,16 @@ function InputField({
             maxLength={maxLength}
             placeholder={placeholder}
           />
-        </>
+        </div>
       );
     case "password":
       return (
-        <>
-          <label htmlFor={inputId}>{label}</label>
+        <div className="inputfield">
+          <label className="inputfield__label" htmlFor={inputId}>
+            {label}
+          </label>
           <input
+            className="inputfield__input"
             onChange={handleChange}
             id={inputId}
             name={name}
@@ -43,13 +49,16 @@ function InputField({
             maxLength={maxLength}
             placeholder={placeholder}
           />
-        </>
+        </div>
       );
     case "dropdown":
       return (
-        <>
-          <label htmlFor={inputId}>{label}</label>
+        <div className="inputfield">
+          <label className="inputfield__label" htmlFor={inputId}>
+            {label}
+          </label>
           <select
+            className="inputfield__select"
             onChange={handleChange}
             id={inputId}
             name={name}
@@ -65,13 +74,16 @@ function InputField({
                 </option>
               ))}
           </select>
-        </>
+        </div>
       );
     default:
       return (
-        <>
-          <label htmlFor={inputId}>{label}</label>
+        <div className="inputfield">
+          <label className="inputfield__label" htmlFor={inputId}>
+            {label}
+          </label>
           <input
+            className="inputfield__input"
             onChange={handleChange}
             id={inputId}
             name={name}
@@ -81,7 +93,7 @@ function InputField({
             maxLength={maxLength}
             placeholder={placeholder}
           />
-        </>
+        </div>
       );
   }
 }
