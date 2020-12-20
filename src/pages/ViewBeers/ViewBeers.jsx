@@ -25,7 +25,7 @@ function ViewBeers() {
   const authContext = useContext(AuthContext);
 
   useEffect(() => {
-    fetch("http://localhost:8080/viewbeerquantity", {
+    fetch("http://jy8e.c.dedikuoti.lt:8081/viewbeerquantity", {
       headers: {
         Authorization: `Bearer ${authContext.token}`,
       },
