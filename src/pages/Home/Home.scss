@@ -6,6 +6,49 @@
     margin: 0;
     &-img {
       width: 100%;
+      display: block;
+    }
+  }
+
+  &__section {
+    display: flex;
+    justify-content: center;
+    margin: 40px 80px 40px;
+
+    &-figure {
+      margin: 0;
+      flex: 1;
+      max-width: 500px;
+      height: 666px;
+
+      &--img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-about {
+      flex: 1;
+      max-width: 400px;
+      max-height: 400px;
+      background-color: $color-sand;
+      padding: 40px;
+      margin-top: 90px;
+      margin-right: -100px;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      border-radius: 8px;
+
+      &--title {
+        text-transform: uppercase;
+        margin-bottom: 50px;
+      }
+
+      &--paragraph {
+        line-height: 30px;
+      }
     }
   }
 }

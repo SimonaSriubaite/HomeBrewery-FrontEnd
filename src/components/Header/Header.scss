@@ -40,6 +40,14 @@
       font-weight: 700;
       transform: scale(1.08);
     }
+
+    &-button {
+      border: 0;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 10px;
+      outline: none;
+    }
   }
 
   &__logo {

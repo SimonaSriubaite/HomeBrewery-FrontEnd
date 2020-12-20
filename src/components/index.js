@@ -4,3 +4,6 @@ export { default as PrivateRoute } from "./PrivateRoute/PrivateRoute";
 export { default as InputForm } from "./InputForm/InputForm";
 export { default as FormTemplate } from "./FormTemplate/FormTemplate";
 export { default as Loader } from "./Loader/Loader";
+export { default as Footer } from "./Footer/Footer";
+export { default as SliderCard } from "./SliderCard/SliderCard";
+export { default as Slider } from "./Slider/Slider";

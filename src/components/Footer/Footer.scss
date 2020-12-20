@@ -1,0 +1,9 @@
+@import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+.footer {
+  &__paragraph {
+    text-align: center;
+  }
+}

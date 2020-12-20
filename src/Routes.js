@@ -2,12 +2,12 @@ import React, { useContext, Suspense, lazy } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 
-import { Header, PrivateRoute, Loader } from "./components";
+import { Header, PrivateRoute, Loader, Footer } from "./components";
 const RegisterLazy = lazy(() => import("./pages/Register/Register"));
 const HomeLazy = lazy(() => import("./pages/Home/Home"));
 const AddBottleLazy = lazy(() => import("./pages/AddBottle/AddBottle"));
 const AddBeerLazy = lazy(() => import("./pages/AddBeer/AddBeer"));
-const AboutLazy = lazy(() => import("./pages/About/About"));
+const ViewBeersLazy = lazy(() => import("./pages/ViewBeers/ViewBeers"));
 const LoginLazy = lazy(() => import("./pages/Login/Login"));
 
 function Routes() {
@@ -27,11 +27,12 @@ function Routes() {
           <Route exact path="/" component={HomeLazy} />
           <Route path="/login" component={LoginLazy} />
           <Route path="/register" component={RegisterLazy} />
-          <PrivateRoute path="/about" component={AboutLazy} />
+          <PrivateRoute path="/view-beers" component={ViewBeersLazy} />
           <PrivateRoute path="/add-beer" component={AddBeerLazy} />
           <PrivateRoute path="/add-bottle" component={AddBottleLazy} />
         </Switch>
       </Suspense>
+      <Footer />
     </Router>
   );
 }

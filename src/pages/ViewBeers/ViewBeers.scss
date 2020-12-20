@@ -1,0 +1,36 @@
+@import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+.viewbeers {
+  max-width: 1440px;
+  height: 86vh;
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+
+  &__table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: left;
+    margin-top: 80px;
+
+    &-row,
+    &-column {
+      border: 1px solid $color-gray-1;
+      padding: 0.5rem;
+      text-align: left;
+      word-wrap: break-word;
+      font-size: 1.2rem;
+    }
+
+    &-button {
+      border: 0;
+      padding: 6px;
+      cursor: pointer;
+      border-radius: 10px;
+      outline: none;
+      background-color: darken($color-sand, 15%);
+    }
+  }
+}

@@ -37,47 +37,49 @@ function Home() {
 
   return (
     <div className="login">
-      {error && <Notification>{error}</Notification>}
-      <form
-        className="login__form"
-        onSubmit={(e) => {
-          e.preventDefault();
+      <div>
+        {error && <Notification>{error}</Notification>}
+        <form
+          className="login__form"
+          onSubmit={(e) => {
+            e.preventDefault();
 
-          login(userDetails, authTokenContext, setError, history);
-        }}
-      >
-        <InputForm
-          type="text"
-          label="Username"
-          placeholder="petras123"
-          minLength="6"
-          maxLength="20"
-          required
-          handleChange={(e) =>
-            setUserDetails({
-              ...userDetails,
-              username: e.target.value.toLowerCase(),
-            })
-          }
-        />
+            login(userDetails, authTokenContext, setError, history);
+          }}
+        >
+          <InputForm
+            type="text"
+            label="Username"
+            placeholder="petras123"
+            minLength="6"
+            maxLength="20"
+            required
+            handleChange={(e) =>
+              setUserDetails({
+                ...userDetails,
+                username: e.target.value.toLowerCase(),
+              })
+            }
+          />
 
-        <InputForm
-          type="password"
-          label="Password"
-          placeholder="password123"
-          minLength="8"
-          maxLength="64"
-          required
-          handleChange={(e) =>
-            setUserDetails({
-              ...userDetails,
-              password: e.target.value,
-            })
-          }
-        />
+          <InputForm
+            type="password"
+            label="Password"
+            placeholder="password123"
+            minLength="8"
+            maxLength="64"
+            required
+            handleChange={(e) =>
+              setUserDetails({
+                ...userDetails,
+                password: e.target.value,
+              })
+            }
+          />
 
-        <button className="login__button">Login</button>
-      </form>
+          <button className="login__button">Login</button>
+        </form>
+      </div>
     </div>
   );
 }

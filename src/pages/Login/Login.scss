@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   height: 90vh;
-  background-color: $color-gray-2;
+  background-color: darken($color-sand, 20%);
 
   &__form {
     max-width: 400px;
@@ -17,6 +17,7 @@
     background-color: white;
     border-radius: 10px;
     box-shadow: $box-shadow-big;
+    margin: 20px;
   }
 
   &__button {
@@ -24,7 +25,7 @@
     padding: 10px 20px;
     text-transform: uppercase;
     float: right;
-    background-color: $color-gray-4;
+    background-color: darken($color-sand, 10%);
     outline: none;
     border: none;
     border-radius: 8px;
@@ -34,7 +35,7 @@
 
     &:hover,
     &:active {
-      background-color: $color-gray-3;
+      background-color: darken($color-sand, 35%);
     }
   }
 }

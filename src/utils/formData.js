@@ -28,11 +28,20 @@ export const AddBeerForm = [
     maxLength: 64,
     placeholder: "Beer Title",
   },
+
   {
     name: "style",
     type: "dropdown",
     labelText: "Style",
     required: true,
+  },
+  {
+    name: "image",
+    type: "text",
+    labelText: "Image",
+    required: true,
+    minLength: 4,
+    placeholder: "http://....",
   },
   {
     name: "alcohol",
@@ -43,6 +52,7 @@ export const AddBeerForm = [
     maxLength: 10,
     placeholder: "Medium",
   },
+
   {
     name: "IBU",
     type: "number",

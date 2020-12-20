@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { FormTemplate } from "../../components";
 import { AddBeerForm } from "../../utils/formData";
 import { AuthContext } from "../../context/AuthContext";

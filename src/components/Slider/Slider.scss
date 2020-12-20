@@ -1,0 +1,59 @@
+@import "../../styles/colors.scss";
+@import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
+
+.slider {
+  border-radius: 8px;
+  box-shadow: $box-shadow-medium;
+  height: 350px;
+  max-width: 1264px;
+  overflow: hidden;
+  position: relative;
+
+  @include respond-to($tablet-min, min) {
+    &-wrapper {
+      height: 32.2rem;
+    }
+  }
+
+  @include respond-to($mobile, max) {
+    height: 350px;
+
+    &-wrapper {
+      height: 100%;
+    }
+  }
+
+  &-wrapper {
+    display: flex;
+    transition: 0.5s all linear;
+    width: 100%;
+  }
+
+  &__track {
+    display: flex;
+    max-width: 100%;
+  }
+
+  &__arrows {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 24px;
+
+    &--prev {
+      right: 47px;
+    }
+
+    &--next {
+      right: 24px;
+
+      .slider__arrows-svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

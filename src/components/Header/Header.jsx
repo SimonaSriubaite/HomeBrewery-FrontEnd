@@ -17,8 +17,8 @@ function Header({ loggedIn, logout }) {
             Home
           </NavLink>
 
-          <NavLink to="/about" className="header__menu-item">
-            About
+          <NavLink to="/view-beers" className="header__menu-item">
+            View Beers
           </NavLink>
           <NavLink to="/add-beer" className="header__menu-item">
             Add Beer
@@ -41,7 +41,10 @@ function Header({ loggedIn, logout }) {
               </>
             )}
             {loggedIn && (
-              <button className="header__menu-item" onClick={logout}>
+              <button
+                className="header__menu-item header__menu-button"
+                onClick={logout}
+              >
                 Logout
               </button>
             )}

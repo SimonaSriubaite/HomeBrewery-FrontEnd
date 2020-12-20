@@ -54,6 +54,28 @@ function FormTemplate({ fields, callback, options }) {
               />
             ))}
           </div>
+          <div className="form__container">
+            {fields.slice(4).map((field) => (
+              <InputForm
+                key={field.name}
+                inputId={field.name}
+                name={field.name}
+                type={field.type}
+                label={field.labelText}
+                required={field.required}
+                minLength={field.minLength}
+                maxLength={field.maxLength}
+                placeholder={field.placeholder}
+                options={options}
+                handleChange={(e) =>
+                  setFieldValues({
+                    ...fieldValues,
+                    [field.name]: e.target.value,
+                  })
+                }
+              />
+            ))}
+          </div>
           <button className="form__button">add</button>
         </form>
       </div>
