@@ -16,16 +16,19 @@ function Header({ loggedIn, logout }) {
           <NavLink to="/" exact={true} className="header__menu-item">
             Home
           </NavLink>
-
-          <NavLink to="/view-beers" className="header__menu-item">
-            View Beers
-          </NavLink>
-          <NavLink to="/add-beer" className="header__menu-item">
-            Add Beer
-          </NavLink>
-          <NavLink to="/add-bottle" className="header__menu-item">
-            Add Bottle
-          </NavLink>
+          {loggedIn && (
+            <>
+              <NavLink to="/view-beers" className="header__menu-item">
+                View Beers
+              </NavLink>
+              <NavLink to="/add-beer" className="header__menu-item">
+                Add Beer
+              </NavLink>
+              <NavLink to="/add-bottle" className="header__menu-item">
+                Add Bottle
+              </NavLink>
+            </>
+          )}
         </div>
 
         <div className="header__menu-end">

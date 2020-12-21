@@ -6,13 +6,13 @@
   border-radius: 8px;
   box-shadow: $box-shadow-medium;
   height: 350px;
-  max-width: 1264px;
+  max-width: 850px;
   overflow: hidden;
   position: relative;
 
   @include respond-to($tablet-min, min) {
     &-wrapper {
-      height: 32.2rem;
+      height: 350px;
     }
   }
 

@@ -36,10 +36,10 @@ const SliderCard = (props) => {
             </div>
           ))}
         </div>
-        <span className="slide__section-span">{props.style}</span>
         <h2 className="slide__section-title">{props.title}</h2>
-        <p className="slide__section-paragraph">{props.description}</p>
-        <button className="slide__button">Learn more</button>
+        <span className="slide__section-span">{props.style}</span>
+        <span className="slide__section-span">IBU {props.IBU}</span>
+        <span className="slide__section-span">Alcohol {props.alcohol}</span>
       </section>
     </div>
   );

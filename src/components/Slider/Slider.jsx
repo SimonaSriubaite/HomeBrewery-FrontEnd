@@ -42,7 +42,7 @@ const Slider = () => {
 
   const sliderController = {
     slideNumber: slideNumber(),
-    numOfSlides: 5,
+    numOfSlides: 3,
     translateValue: 0,
   };
 
@@ -63,7 +63,7 @@ const Slider = () => {
     updateDimensions();
     window.addEventListener("resize", updateDimensions);
     return () => window.removeEventListener("resize", updateDimensions);
-  }, []);
+  }, [authContext.token]);
 
   useEffect(() => {
     dispatch("RESET");
@@ -114,7 +114,8 @@ const Slider = () => {
                   image={slide.image}
                   title={slide.title}
                   style={slide.style}
-                  description={slide.description}
+                  IBU={slide.IBU}
+                  alcohol={slide.alcohol}
                   slideNumber={sliders.slideNumber}
                 />
               );

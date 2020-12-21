@@ -50,7 +50,7 @@ function Home() {
           <InputForm
             type="text"
             label="Username"
-            placeholder="petras123"
+            placeholder="username"
             minLength="6"
             maxLength="20"
             required
@@ -65,7 +65,7 @@ function Home() {
           <InputForm
             type="password"
             label="Password"
-            placeholder="password123"
+            placeholder="password"
             minLength="8"
             maxLength="64"
             required

@@ -1,23 +1,3 @@
-export const registration = [
-  {
-    name: "username",
-    type: "username",
-    labelText: "Username",
-    required: true,
-    minLength: 6,
-    maxLength: 20,
-    placeholder: "johnsmith",
-  },
-  {
-    name: "password",
-    type: "password",
-    labelText: "Password",
-    required: true,
-    minLength: 8,
-    maxLength: 64,
-    placeholder: "*********",
-  },
-];
 export const AddBeerForm = [
   {
     name: "title",
@@ -25,7 +5,7 @@ export const AddBeerForm = [
     labelText: "Beer Title",
     required: true,
     minLength: 3,
-    maxLength: 64,
+    maxLength: 15,
     placeholder: "Beer Title",
   },
 

@@ -5,10 +5,6 @@
 .header {
   display: flex;
 
-  @include respond-to($mobile, max) {
-    display: none;
-  }
-
   &__menu {
     display: flex;
     justify-content: space-between;
@@ -16,7 +12,7 @@
     width: 1400px;
     align-items: center;
     margin: 0 auto;
-    box-shadow: $box-shadow-medium;
+    box-shadow: 0 4px 2px -2px gray;
 
     &-start {
       display: flex;
@@ -25,14 +21,15 @@
 
     &-item {
       text-decoration: none;
-      margin: 0 20px;
-      //text-transform: uppercase;
+      margin: 20px 20px;
+      text-transform: uppercase;
       color: $color-black;
       font-weight: 500;
       display: inline-block;
+      font-size: 16px;
 
       &:hover {
-        font-weight: 700;
+        font-weight: 500;
         transform: scale(1.08);
       }
     }
@@ -57,6 +54,21 @@
     &-img {
       width: 100%;
       display: block;
+    }
+  }
+
+  @include respond-to($mobile, max) {
+    &__menu {
+      &-item {
+        font-size: 14px;
+        margin: 23px 10px;
+      }
+
+      &-button {
+        background-color: $color-transparent;
+        margin: 0;
+        margin-right: 40px;
+      }
     }
   }
 }

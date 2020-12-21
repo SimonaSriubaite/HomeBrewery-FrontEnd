@@ -14,7 +14,7 @@ function FormTemplate({ fields, callback, options }) {
             callback(fieldValues);
           }}
         >
-          {fields.slice(0, 2).map((field) => (
+          {fields.slice(0, 3).map((field) => (
             <InputForm
               key={field.name}
               inputId={field.name}
@@ -33,29 +33,7 @@ function FormTemplate({ fields, callback, options }) {
             />
           ))}
           <div className="form__container">
-            {fields.slice(2, 4).map((field) => (
-              <InputForm
-                key={field.name}
-                inputId={field.name}
-                name={field.name}
-                type={field.type}
-                label={field.labelText}
-                required={field.required}
-                minLength={field.minLength}
-                maxLength={field.maxLength}
-                placeholder={field.placeholder}
-                options={options}
-                handleChange={(e) =>
-                  setFieldValues({
-                    ...fieldValues,
-                    [field.name]: e.target.value,
-                  })
-                }
-              />
-            ))}
-          </div>
-          <div className="form__container">
-            {fields.slice(4).map((field) => (
+            {fields.slice(3, 5).map((field) => (
               <InputForm
                 key={field.name}
                 inputId={field.name}

@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
 @import "../../styles/typography.scss";
+@import "../../styles/mixins.scss";
 
 .home {
   &__figure {
@@ -48,6 +49,29 @@
 
       &--paragraph {
         line-height: 30px;
+      }
+    }
+  }
+
+  @include respond-to($mobile, max) {
+    &__section {
+      display: block;
+      margin: 20px;
+
+      &-about {
+        margin: -40px 20px;
+        z-index: 100;
+        position: relative;
+        max-width: 450px;
+      }
+
+      &-figure {
+        max-width: 600px;
+
+        &--img {
+          width: 100%;
+          display: block;
+        }
       }
     }
   }

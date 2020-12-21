@@ -3,12 +3,12 @@
 @import "../../styles/mixins.scss";
 
 .register {
-  max-width: 1440px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: calc(100vh - 76px - 52px);
   background-color: darken($color-sand, 20%);
+  width: 100vw;
 
   &__form {
     max-width: 400px;
