@@ -14,24 +14,6 @@ function InputField({
   options,
 }) {
   switch (type) {
-    case "email":
-      return (
-        <div className="inputfield">
-          <label className="inputfield__label" htmlFor={inputId}>
-            {label}
-          </label>
-          <input
-            onChange={handleChange}
-            id={inputId}
-            name={name}
-            type="email"
-            required={required}
-            minLength={minLength}
-            maxLength={maxLength}
-            placeholder={placeholder}
-          />
-        </div>
-      );
     case "password":
       return (
         <div className="inputfield">
