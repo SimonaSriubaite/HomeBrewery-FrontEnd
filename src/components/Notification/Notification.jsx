@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { ReactComponent as CloseButton } from "../../assets/CloseButton.svg";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import "./Notification.scss";
 
 function Notification({ children }) {
@@ -20,5 +21,9 @@ function Notification({ children }) {
     </div>
   );
 }
+
+Notification.propTypes = {
+  children: PropTypes.string,
+};
 
 export default Notification;

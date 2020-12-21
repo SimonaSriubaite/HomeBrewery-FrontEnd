@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./InputForm.scss";
 
 function InputField({
@@ -79,5 +80,18 @@ function InputField({
       );
   }
 }
+
+InputField.propTypes = {
+  label: PropTypes.string,
+  name: PropTypes.string,
+  handleChange: PropTypes.func,
+  type: PropTypes.string,
+  inputId: PropTypes.string,
+  required: PropTypes.bool,
+  minLength: PropTypes.number,
+  maxLength: PropTypes.number,
+  placeholder: PropTypes.string,
+  options: PropTypes.array,
+};
 
 export default InputField;

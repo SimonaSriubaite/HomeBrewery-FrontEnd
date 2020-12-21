@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { ReactComponent as Dot } from "../../assets/dot.svg";
 import { AuthContext } from "../../context/AuthContext";
 import classNames from "classnames";
+import PropTypes from "prop-types";
 import "./SliderCard.scss";
 
 const SliderCard = (props) => {
@@ -43,6 +44,14 @@ const SliderCard = (props) => {
       </section>
     </div>
   );
+};
+
+SliderCard.propTypes = {
+  img: PropTypes.string,
+  name: PropTypes.string,
+  about: PropTypes.string,
+  description: PropTypes.string,
+  slideNumber: PropTypes.number,
 };
 
 export default SliderCard;

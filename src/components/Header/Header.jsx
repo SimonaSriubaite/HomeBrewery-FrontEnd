@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import logoImg from "../../assets/logo.png";
+import PropTypes from "prop-types";
 import "./Header.scss";
 
 function Header({ loggedIn, logout }) {
@@ -57,5 +58,10 @@ function Header({ loggedIn, logout }) {
     </nav>
   );
 }
+
+Header.propTypes = {
+  loggedIn: PropTypes.bool,
+  logout: PropTypes.func,
+};
 
 export default Header;

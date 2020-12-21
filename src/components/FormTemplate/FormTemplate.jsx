@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import { InputForm } from "../";
+
 import "./FormTemplate.scss";
 
 function FormTemplate({ fields, callback, options }) {
@@ -60,5 +62,11 @@ function FormTemplate({ fields, callback, options }) {
     </div>
   );
 }
+
+FormTemplate.propTypes = {
+  fields: PropTypes.array,
+  options: PropTypes.array,
+  callback: PropTypes.func,
+};
 
 export default FormTemplate;
