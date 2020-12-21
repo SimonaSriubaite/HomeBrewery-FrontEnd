@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputForm, Notification } from "../../components";
+import { InputField, Notification } from "../../components";
 import "./Register.scss";
 
 function register(data, setError) {
@@ -30,7 +30,7 @@ function Register() {
           register(userDetails, setError);
         }}
       >
-        <InputForm
+        <InputField
           type="text"
           label="Username"
           placeholder="username"
@@ -45,7 +45,7 @@ function Register() {
           }
         />
 
-        <InputForm
+        <InputField
           type="password"
           label="Password"
           placeholder="password"

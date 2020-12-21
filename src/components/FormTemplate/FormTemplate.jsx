@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { InputForm } from "../";
+import { InputField } from "../";
 
 import "./FormTemplate.scss";
 
@@ -17,7 +17,7 @@ function FormTemplate({ fields, callback, options }) {
           }}
         >
           {fields.slice(0, 3).map((field) => (
-            <InputForm
+            <InputField
               key={field.name}
               inputId={field.name}
               className={field.className}
@@ -36,7 +36,7 @@ function FormTemplate({ fields, callback, options }) {
           ))}
           <div className="form__container">
             {fields.slice(3, 5).map((field) => (
-              <InputForm
+              <InputField
                 key={field.name}
                 inputId={field.name}
                 name={field.name}

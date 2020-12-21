@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./InputForm.scss";
+import "./InputField.scss";
 
 function InputField({
   label,
@@ -88,8 +88,6 @@ InputField.propTypes = {
   type: PropTypes.string,
   inputId: PropTypes.string,
   required: PropTypes.bool,
-  minLength: PropTypes.number,
-  maxLength: PropTypes.number,
   placeholder: PropTypes.string,
   options: PropTypes.array,
 };

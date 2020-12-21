@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/AuthContext";
-import { Notification, InputForm } from "../../components";
+import { Notification, InputField } from "../../components";
 import "./Login.scss";
 
 function login(data, context, setError, history) {
@@ -47,7 +47,7 @@ function Home() {
             login(userDetails, authTokenContext, setError, history);
           }}
         >
-          <InputForm
+          <InputField
             type="text"
             label="Username"
             placeholder="username"
@@ -62,7 +62,7 @@ function Home() {
             }
           />
 
-          <InputForm
+          <InputField
             type="password"
             label="Password"
             placeholder="password"
