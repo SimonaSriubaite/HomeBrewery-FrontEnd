@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import { FormTemplate } from "../../components";
+import { FormTemplate, Notification } from "../../components";
 import { ChangeQuantityForm } from "../../utils/formData";
 import { AuthContext } from "../../context/AuthContext";
 import "./AddBottle.scss";
 
-function addBottle(fieldValues, authContext) {
+function addBottle(fieldValues, authContext, setError) {
   fetch("http://jy8e.c.dedikuoti.lt:8081/changebeerquantity", {
     method: "POST",
     headers: {
@@ -14,12 +14,13 @@ function addBottle(fieldValues, authContext) {
     body: JSON.stringify(fieldValues),
   })
     .then((res) => res.json())
-    .catch((error) => error);
+    .catch((error) => setError(error.message));
 }
 
 function AddBottle() {
   const authContext = useContext(AuthContext);
   const [data, setData] = useState();
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("http://jy8e.c.dedikuoti.lt:8081/beers", {
@@ -58,8 +59,11 @@ function AddBottle() {
             </p>
           </div>
           <div className="addbottle__section-form">
+            {error && <Notification>{error}</Notification>}
             <FormTemplate
-              callback={(fieldValues) => addBottle(fieldValues, authContext)}
+              callback={(fieldValues) =>
+                addBottle(fieldValues, authContext, setError)
+              }
               fields={ChangeQuantityForm}
               options={data}
             />

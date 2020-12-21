@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { InputForm } from "../../components";
+import { InputForm, Notification } from "../../components";
 import "./Register.scss";
 
-function register(data) {
+function register(data, setError) {
   fetch("http://jy8e.c.dedikuoti.lt:8081/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
-  }).then((data) => alert("The information was added successfully"));
+  }).catch((error) => setError(error.message));
 }
 
 function Register() {
@@ -17,15 +17,17 @@ function Register() {
     username: "",
     password: "",
   });
+  const [error, setError] = useState("");
 
   return (
     <div className="register">
+      {error && <Notification>{error}</Notification>}
       <form
         className="register__form"
         onSubmit={(e) => {
           e.preventDefault();
 
-          register(userDetails);
+          register(userDetails, setError);
         }}
       >
         <InputForm

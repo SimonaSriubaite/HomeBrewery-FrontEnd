@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
-import { FormTemplate } from "../../components";
+import React, { useContext, useState } from "react";
+import { FormTemplate, Notification } from "../../components";
 import { AddBeerForm } from "../../utils/formData";
 import { AuthContext } from "../../context/AuthContext";
 import BreweryImg from "../../assets/brewery.jpg";
 import "./AddBeer.scss";
 
-function addBeer(fieldValues, authContext) {
+function addBeer(fieldValues, authContext, setError) {
   fetch("http://jy8e.c.dedikuoti.lt:8081/beers", {
     method: "POST",
     headers: {
@@ -15,11 +15,12 @@ function addBeer(fieldValues, authContext) {
     body: JSON.stringify(fieldValues),
   })
     .then((res) => res.json())
-    .catch((error) => error);
+    .catch((error) => setError(error.message));
 }
 
 function AddBeer() {
   const authContext = useContext(AuthContext);
+  const [error, setError] = useState("");
   const beerStyles = [
     { id: 0, value: "select", text: "Please Select" },
     { id: 1, value: "AIPA", text: "AIPA" },
@@ -43,8 +44,11 @@ function AddBeer() {
       <div className="addbeer__container addbeer__container--sec">
         <div>
           <h1 className="addbeer__container-title">Add some beer</h1>
+          {error && <Notification>{error}</Notification>}
           <FormTemplate
-            callback={(fieldValues) => addBeer(fieldValues, authContext)}
+            callback={(fieldValues) =>
+              addBeer(fieldValues, authContext, setError)
+            }
             fields={AddBeerForm}
             options={beerStyles}
           />

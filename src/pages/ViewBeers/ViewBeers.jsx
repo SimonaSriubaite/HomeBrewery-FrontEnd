@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useContext } from "react";
-import { Loader, Slider } from "../../components";
+import { Loader, Slider, Notification } from "../../components";
 import { AuthContext } from "../../context/AuthContext";
 import "./ViewBeers.scss";
 
-function deleteButton(e, data, setData) {
+function deleteButton(e, data, setData, setError) {
   const pass = prompt("Please enter the password");
   const beerId = Number(e.target.value);
   if (pass != null) {
@@ -13,16 +13,18 @@ function deleteButton(e, data, setData) {
         "Content-type": "application/json; charset=UTF-8",
       },
       body: JSON.stringify({ pass }),
-    }).then((item) => {
-      console.log(data);
-      setData(data.filter((item) => beerId !== item.id));
-    });
+    })
+      .then((item) => {
+        setData(data.filter((item) => beerId !== item.id));
+      })
+      .catch((error) => setError(error.message));
   }
 }
 
 function ViewBeers() {
   const [data, setData] = useState([]);
   const authContext = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     fetch("http://jy8e.c.dedikuoti.lt:8081/viewbeerquantity", {
@@ -31,11 +33,13 @@ function ViewBeers() {
       },
     })
       .then((res) => res.json())
-      .then((data) => setData(data));
+      .then((data) => setData(data))
+      .catch((error) => setError(error.message));
   }, [authContext.token]);
 
   return (
     <div className="viewbeers">
+      {error && <Notification>{error}</Notification>}
       {data ? (
         <div>
           <Slider />
